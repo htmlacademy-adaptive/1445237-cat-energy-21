@@ -1,65 +1,66 @@
 .promo {
-  //background: @main_green_transparent;
   background: linear-gradient(rgba(104, 183, 56, 0.85) 63%, @white 63%), url("../img/cat.png");
-  height: 502px;
+  height: 480px;
   width: 320px;
   background-repeat: no-repeat;
   position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 150px;
-    left: 10px;
-    background: url("../img/glasswitheat.png");
-    background-repeat: no-repeat;
-    z-index: 2;
-    height: 280px;
-    width: 270px;
-
-    @media (min-width: @tablet-width) {
-      background: url("../img/glasswitheat.png");
-      height: 609px;
-      width: 708px;
-      background-repeat: no-repeat;
-    }
-  }
-
   @media (min-width: @tablet-width) {
-    width: 708px;
     background: none;
-    background-color: @white;
-    height: 810px;
+    height: 609px;
+    width: 709px;
   }
 
   @media (min-width: @desktop-width) {
-    display: block;
-    width: 720px;
-    margin-left: 140px;
-    background: linear-gradient(rgba(104, 183, 56, 0.85) 63%, @white 63%), url("../img/cat-desktop.png");
-    background-repeat: no-repeat;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -172px;
+      left: 721px;
+      width: 720px;
+      height: 694px;
+      background: linear-gradient(@main_green_transparent 100%, @white 100%), url("../img/cat-desktop.png");
+      background-repeat: no-repeat;
+    }
   }
 }
 
 .promo__program-search {
-  // position: absolute;  - появляется дополнительная картинка от псевдокласса
-  // объявление блоком и позиционирование временное для видимого порядка
   display: block;
   margin: 0 auto;
-  margin-top: 300px;
-  width: 220px;
-  top: 220px;
+  margin-top: 302px;
+  width: 280px;
+  height: 30px;
   color: @white;
-  padding: 7px 44px 7px 44px;
+  text-align: center;
+  padding-top: 10px;
   background: @main_green;
   text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background: @green_hover;
+  }
+
+  &:active {
+    color: @white-opacity;
+  }
 
   @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 20px;
     margin: 0;
-    margin-left: 83px;
-    margin-top: 50px;
-    width: 122px;
-    z-index: 4;
+    margin-left: -8px;
+    margin-top: 51px;
+    width: 244px;
+    height: 40px;
+    z-index: 2;
+    padding-top: 14px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-top: 55px;
   }
 }
 
@@ -68,10 +69,24 @@
   font-size: @font-size;
   line-height: @line-height;
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
 
   @media (min-width: @tablet-width) {
-    width: 708px;
+    width: 768px;
     color: @black_text;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 3px;
+    margin-left: 118px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 190px;
+    margin-top: 55px;
   }
 }
 
@@ -79,6 +94,17 @@
   font-size: 36px;
   line-height: 36px;
   font-weight: normal;
+  margin-top: 27px;
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0;
+    margin-top: 50px;
+    display: block;
+    text-align: start;
+  }
 }
 
 .promo__slogan {
@@ -86,4 +112,33 @@
   line-height: 14px;
   font-weight: normal;
   text-transform: uppercase;
+  margin-top: 25px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 20px;
+    color: @black_text;
+    margin-top: 41px;
+  }
+}
+
+.promo__banner {
+  position: absolute;
+  margin: 0;
+  top: 170px;
+  left: 20px;
+
+  @media (min-width: @tablet-width) {
+    width: 709px;
+    height: 609px;
+    top: 251px;
+    left: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 552px;
+    height: 499px;
+    top: -30px;
+    left: 558px;
+  }
 }
